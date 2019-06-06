@@ -1,0 +1,43 @@
+# wercker.yml
+box: debian:stable-slim
+build:
+  steps:
+    - shellcheck:
+        files: run.sh
+    - install-packages:
+        packages: curl
+    - script:
+        name: get jq
+        code: curl -Lo $WERCKER_ROOT/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x $WERCKER_ROOT/jq
+
+test:
+  steps:
+    - script:
+        name: run tests
+        code: test/run.sh
+
+publish:
+  steps:
+    - script:
+        name: prepare output
+        code: rm -rf $WERCKER_ROOT/.git
+    - install-packages:
+        packages: ca-certificates
+    - internal/publish-step:
+        owner: $PUBLISH_OWNER
+
+dev:
+  steps:
+    - shellcheck:
+        files: run.sh
+    - install-packages:
+        packages: curl ca-certificates
+    - script:
+        name: get jq
+        code: curl -Lo $WERCKER_ROOT/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x $WERCKER_ROOT/jq
+    - internal/shell:
+        cmd: /bin/sh #defaults to /bin/bash
+        code: |
+          # some code to automatically run in your shell session
+          # before you start interacting
+          cd /var/log

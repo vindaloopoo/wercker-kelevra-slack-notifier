@@ -1,0 +1,5 @@
+.wercker/
+env.wercker
+
+# external jq command downloaded during build/dev
+/jq
