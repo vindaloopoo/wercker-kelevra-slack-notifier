@@ -4,7 +4,7 @@
 
 A wercker after-step slack notifier written in bash and curl. Make sure you create a Slack webhook first (see the Slack integrations page to set one up).
 
-This is based on the [official build step](https://github.com/wercker/step-slack). Why? as we have added the `notify_on` option `failed_and_passed_after_failed`.
+This is based on the [official build step](https://github.com/wercker/step-slack). Why? as we have added the `notify_on` option `failed_or_passed_after_failed`.
 
 # Options
 
@@ -54,7 +54,7 @@ build:
 build:
   after-steps:
     - kingsquare/kelevra-slack-notifier
-      notify_on: failed_and_passed_after_failed
+      notify_on: failed_or_passed_after_failed
 ```
 
 # Testing

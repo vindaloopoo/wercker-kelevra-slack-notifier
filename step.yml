@@ -1,7 +1,7 @@
 # step.yml
 name: kelevra-slack-notifier
-version: 0.0.2
-summary: Posts Wercker build/deploy status to a Slack channel. Use `failed_and_passed_after_failed` as least annoying.
+version: 0.0.2.1
+summary: Posts Wercker build/deploy status to a Slack channel. Use `failed_or_passed_after_failed` as least annoying.
 tags:
   - notification
   - webhook
