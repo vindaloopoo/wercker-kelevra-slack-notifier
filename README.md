@@ -1,5 +1,4 @@
 [![wercker status](https://app.wercker.com/status/446df94fe0566fad505da38719e7cce6/s/master "wercker status")](https://app.wercker.com/project/byKey/446df94fe0566fad505da38719e7cce6)
-
 # wercker-kelevra-slack-notifier
 
 A wercker after-step slack notifier written in bash and curl. Make sure you create a Slack webhook first (see the Slack integrations page to set one up).
@@ -59,14 +58,10 @@ build:
 
 # Testing
 
-Using the wercker-cli
+Using the [wercker-cli](https://devcenter.wercker.com/development/cli/)
 
 # License
 
 The MIT License (MIT)
-
-# Changelog
-
-## 0.0.1
 
 - Initial release based on the [official build step](https://github.com/wercker/step-slack)
