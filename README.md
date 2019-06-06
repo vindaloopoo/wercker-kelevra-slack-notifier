@@ -16,9 +16,9 @@ Options are applied via organisation environment, pipeline environment or the `w
 |`channel`|The Slack channel (excluding `#`)|`SLACK_NOTIFIER_CHANNEL`|
 |`username`|Username of the notification message. i.e. who it is sent by.|`SLACK_NOTIFIER_USERNAME`|
 |`icon_url`|A url that specifies an image to use as the user avatar icon in Slack|`SLACK_NOTIFIER_ICON_URL`|
-|`notify_on`|If set. Possible values `failed`, `passed` or `failed_and_passed_after_failed`. <br />Default is `all`.<br /><ul><li>If set to `failed`, it will only notify on failed builds or deploys.</li><li>If set to `passed`, it will only notify on passed builds or deploys.</li><li>If set to `failed_and_passed_after_failed`, it will only notify on failed builds/deploys or passed after a failed. This requires the `wercker_token` option.</li></ul>|`SLACK_NOTIFIER_NOTIFY_ON`|
+|`notify_on`|If set. Possible values `failed`, `passed` or `failed_or_passed_after_failed`. <br />Default is `all`.<br /><ul><li>If set to `failed`, it will only notify on failed builds or deploys.</li><li>If set to `passed`, it will only notify on passed builds or deploys.</li><li>If set to `failed_and_passed_after_failed`, it will only notify on failed builds/deploys or passed after a failed. This requires the `wercker_token` option.</li></ul>|`SLACK_NOTIFIER_NOTIFY_ON`|
 |`branch`|If set, it will only notify on the given branch|`SLACK_NOTIFIER_BRANCH`|
-|`wercker_token`|This is a wercker API token that can access the application.<br/>Required for the`notify_on` value `failed_and_passed_after_failed`.|`SLACK_NOTIFIER_WERCKER_TOKEN`|
+|`wercker_token`|This is a wercker API token that can access the application.<br/>Required for the`notify_on` value `failed_or_passed_after_failed`.|`SLACK_NOTIFIER_WERCKER_TOKEN`|
 
 ## Examples
 

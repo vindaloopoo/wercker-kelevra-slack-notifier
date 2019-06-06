@@ -45,7 +45,7 @@ if [ -n "$WERCKER_SLACK_NOTIFIER_BRANCH" ]; then
 fi
 
 # skip notifications if not interested in passed builds or deploys
-if [[ "$WERCKER_RESULT" = "passed" ] && [ ${WERCKER_SLACK_NOTIFIER_NOTIFY_ON} = "failed_and_passed_after_failed" ]]; then
+if [[ "$WERCKER_RESULT" = "passed" ] && [ ${WERCKER_SLACK_NOTIFIER_NOTIFY_ON} = "failed_or_passed_after_failed" ]]; then
     if [ -z ${WERCKER_SLACK_NOTIFIER_WERCKER_TOKEN} ]; then
         fail "No Wercker API token is specified."
     fi
